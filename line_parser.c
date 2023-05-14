@@ -1,13 +1,13 @@
 #include "header_file.h"
 
 /**
- * line_parser - function that parse line and execute the file if it is
+ * line_parser - Function that parse line and execute the file if it is
  * a program.
- * @line: pointer to string that contains the command included by user.
- * @token_num: number of segments in command line included.
- * @argv: array of arguments given to program.
- * @command_num: number of commands that is included.
- * Return: void.
+ * @line: Pointer to string that contains the command included by user.
+ * @token_num: Number of segments in command line included.
+ * @argv: Array of arguments given to program.
+ * @command_num: Number of commands that is included.
+ * Return: Void.
  */
 void line_parser(char *line, int token_num, char **argv, int command_num)
 {
