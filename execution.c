@@ -1,9 +1,9 @@
 #include "header_file.h"
 
 /**
- * change_dir - function that change the working directory.
- * @ar: pointer of pointer to string that contains the environment varialbes.
- * Return: void.
+ * change_dir - Function that change the working directory.
+ * @ar: Pointer of pointer to string that contains the environment varialbes.
+ * Return: Void.
  */
 void change_dir(char **ar)
 {
@@ -32,11 +32,11 @@ void change_dir(char **ar)
 }
 
 /**
- * check_prog - function that check if tokens contais a built-in program.
- * @line: pointer to string that contains the commands.
- * @ar: pointer of pointer to string that contains the commands.
- * @array: pointer of pointer to string that contains the commands.
- * @newline: the copy of @line.
+ * check_prog - Function that check if tokens contais a built-in program.
+ * @line: Pointer to string that contains the commands.
+ * @ar: Pointer of pointer to string that contains the commands.
+ * @array: Pointer of pointer to string that contains the commands.
+ * @newline: The copy of @line.
  * Return: 1 if a program found, 0 otherwise.
  */
 int check_prog(char *line, char **ar, char **array, char *newline)
@@ -66,7 +66,13 @@ int check_prog(char *line, char **ar, char **array, char *newline)
 }
 
 /**
- * execute_one - function that
+ * execute_one - function that excute programs and handles the errors.
+ * @line: Included by user.
+ * @ar: Array of commands.
+ * @array: Array of commands.
+ * @argv: Arrray of arguments that passed to the shell program.
+ * @command_num: Number of commands contained in @line.
+ * Return: 0 always success.
  */
 int execute_one(char *line, char **ar, char *newline, char **array, char **argv, int command_num)
 {
@@ -110,4 +116,41 @@ int execute_one(char *line, char **ar, char *newline, char **array, char **argv,
         errno = 127;
     return (0);
 
+}
+
+/**
+ * execute_path - Function that execute attempt to execute a
+ * program using its path.
+ * @p: Pointer the string contains the program name.
+ * @ar: Array of paths.
+ * Return: Void.
+ */
+void execute_path(char *p, char **ar)
+{
+	int status, p_len = 0, ar_len = 0;
+	pid_t child;
+	char *copy = NULL;
+
+	while (p[p_len])
+		p_len++;
+	while (ar[0][ar_len])
+		ar_len++;
+	copy = malloc(sizeof(char) * (p_len + ar_len + 2));
+	_strcpy(copy, p);
+	_strcat(copy, "/");
+	_strcat(copy, ar[0]);
+	copy[p_len + ar_len + 1] = '\0';
+
+	child = fork();
+	if (child == 0)
+	{
+		if (access(copy, X_OK) == 0)
+			execve(copy, ar, environ);
+	}
+	else
+		while (waitpid(1, &status, 0) != child)
+			;
+	if (status == 0)
+		errno = 0;
+	free(copy);
 }
