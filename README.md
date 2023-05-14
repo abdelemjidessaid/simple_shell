@@ -30,6 +30,7 @@
   * [Installation](#installation)
 * [Usage](#usage)
 * [Authors](#authors)
+* [Collaborator](#collaborator)
 * [Files description](#files-description)
 
 ## About The Project
@@ -101,9 +102,13 @@ gcc *.c -o run
 5. Enjoy.
 
 
-## Authors
+## Author
 
-* **Abdelemjid Essaid & Khaoula Berrah** - *ALX Software Enginnering Students* - [Abdelemjid Essaid & Khaoula Berrah](https://github.com/abdelemjidessaid)
+* **Abdelemjid Essaid** - *ALX Software Enginnering Student* - [Abdelemjid Essaid](https://github.com/abdelemjidessaid)
+
+## Collaborator
+
+* **Khaoula Berrah** - *ALX Software Enginnering Student* - [Khaoula Berrah](https://github.com/khaoula-berrah)
 
 
 ## Files description:
