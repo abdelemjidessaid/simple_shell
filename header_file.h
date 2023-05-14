@@ -36,7 +36,10 @@ typedef struct format
 
 /**** PROTOTYPES ****/
 unsigned int str_len(char *str);
+int _strcpy(char *dest, char *src);
+void _strcat(char *dest, char *ad);
 char *_strdup(char *str);
+void _puts(char *str);
 int _strcmp(char *one, char *two);
 int _strncmp(char *one, char *two, int n);
 
@@ -46,7 +49,10 @@ void change_dir(char **ar);
 int check_prog(char *line, char **ar, char **array, char *newline);
 int count_tokens(char *line);
 int execute_one(char *line, char **ar, char *newline, char **array, char **argv, int command_num);
+void execute_path(char *p, char **ar);
 void line_parser(char *line, int token_num, char *argv[], int command_num);
+int find_path(char *p, char **ar);
+int find_file(char **ar);
 
 
 
