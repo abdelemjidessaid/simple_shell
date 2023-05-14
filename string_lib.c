@@ -7,11 +7,11 @@
  */
 unsigned int str_len(char *str)
 {
-    unsigned int len = 0;
+	unsigned int len = 0;
 
-    while (str[len] != '\0')
-        len++;
-    return (len);
+	while (str[len] != '\0')
+		len++;
+	return (len);
 }
 
 /**
@@ -21,24 +21,24 @@ unsigned int str_len(char *str)
  */
 char *_strdup(char *str)
 {
-    int len, i;
-    char *p;
+	int len, i;
+	char *p;
 
-    if (str)
-    {
-        len = str_len(str);
-        p = malloc(sizeof(char) * (len + 1));
-        if (p)
-        {
-            for (i = 0; i < len; i++)
-                p[i] = str[i];
-            p[i] = '\0';
-            return (p);
-        }
-        else
-            return (NULL);
-    }
-    return (NULL);
+	if (str)
+	{
+		len = str_len(str);
+		p = malloc(sizeof(char) * (len + 1));
+		if (p)
+		{
+			for (i = 0; i < len; i++)
+				p[i] = str[i];
+			p[i] = '\0';
+			return (p);
+		}
+		else
+			return (NULL);
+	}
+	return (NULL);
 }
 
 /**
@@ -49,12 +49,12 @@ char *_strdup(char *str)
  */
 int _strcmp(char *one, char *two)
 {
-    int i = 0;
+	int i = 0;
 
-    while (one[i] && two[i])
-        if (one[i] != two[i])
-            return (0);
-    return (1);
+	while (one[i] && two[i])
+		if (one[i] != two[i])
+			return (0);
+	return (1);
 }
 
 /**
@@ -66,12 +66,12 @@ int _strcmp(char *one, char *two)
  */
 int _strncmp(char *one, char *two, int n)
 {
-    int i = 0;
+	int i = 0;
 
-    while (one[i] && two[i] && i < n)
-        if (one[i] != two[i])
-            return (0);
-    return (1);
+	while (one[i] && two[i] && i < n)
+		if (one[i] != two[i])
+			return (0);
+	return (1);
 }
 
 /**

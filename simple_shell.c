@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 			write(STDOUT_FILENO, "\n", 1);
 			break;
 		}
-		
+
 		token_num = count_tokens(line);
 		line_parser(line, token_num, argv, command_num);
 		command_num++;

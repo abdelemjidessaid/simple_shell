@@ -24,14 +24,17 @@ extern char **environ;
 
 /**** STRUCTS ****/
 /**
- * format - struct of format that holds the type of data and their functions.
+ * struct format - struct of format that holds the type of data and their
+ * functions.
  * @data_type: the type of data.
  * @type: the specific function for the current data.
+ *
+ * Description: struct format used in print function.
  */
 typedef struct format
 {
-    char *data_type;
-    int (*type)();
+	char *data_type;
+	int (*type)();
 } frmt;
 
 /**** PROTOTYPES ****/
@@ -48,7 +51,9 @@ void free_parser(char *line, char *newline, char **ar, char **array);
 void change_dir(char **ar);
 int check_prog(char *line, char **ar, char **array, char *newline);
 int count_tokens(char *line);
-int execute_one(char *line, char **ar, char *newline, char **array, char **argv, int command_num);
+int execute_one(
+	char *line, char **ar, char *newline, char **array,
+	char **argv, int command_num);
 void execute_path(char *p, char **ar);
 void line_parser(char *line, int token_num, char *argv[], int command_num);
 int find_path(char *p, char **ar);
