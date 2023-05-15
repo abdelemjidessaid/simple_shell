@@ -44,7 +44,7 @@ int find_path(char *p, char **ar)
 int find_file(char **ar)
 {
 	int i = 0, found = 0;
-	char *p = NULL, path = NULL;
+	char *p = NULL, *path = NULL;
 
 	while (environ[i])
 	{

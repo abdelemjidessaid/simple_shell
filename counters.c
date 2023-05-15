@@ -11,7 +11,7 @@ int count_tokens(char *line)
 
 	while (line[i])
 	{
-		if (line[i] == ' ' || line[i] == 10 || line == '\t')
+		if (line[i] == ' ' || line[i] == 10 || line[i] == '\t')
 			found = 1;
 		else if (found)
 		{

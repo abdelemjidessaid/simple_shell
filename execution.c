@@ -69,8 +69,9 @@ int check_prog(char *line, char **ar, char **array, char *newline)
  * execute_one - function that excute programs and handles the errors.
  * @line: Included by user.
  * @ar: Array of commands.
+ * @newline: Pointer to a string contains the copy of @line.
  * @array: Array of commands.
- * @argv: Arrray of arguments that passed to the shell program.
+ * @argv: Array of arguments that passed to the shell program.
  * @command_num: Number of commands contained in @line.
  * Return: 0 always success.
  */
@@ -85,7 +86,7 @@ int execute_one(
 	stat_buf = malloc(sizeof(struct stat));
 	if (stat(ar[0], stat_buf) == -1)
 	{
-		exists = find_program(ar);
+		exists = find_file(ar);
 		if (!exists)
 		{
 			free(stat_buf);
@@ -105,7 +106,7 @@ int execute_one(
 		}
 	}
 	else
-		while (wait_pid(-1, &status, 0) != child_id)
+		while (waitpid(-1, &status, 0) != child_id)
 			;
 
 	free(stat_buf);

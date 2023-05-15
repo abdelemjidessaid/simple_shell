@@ -82,10 +82,11 @@ int _strncmp(char *one, char *two, int n)
 void _puts(char *str)
 {
 	int i = 0;
+	char newline = '\n';
 
 	if (!str)
-		return (NULL);
+		return;
 	while (str[i])
-		write(STDOUT_FILENO, str[i++], 1);
-	write(STDOUT_FILENO, '\n', 1);
+		write(STDOUT_FILENO, &str[i++], 1);
+	write(STDOUT_FILENO, &newline, 1);
 }

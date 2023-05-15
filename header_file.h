@@ -45,6 +45,11 @@ char *_strdup(char *str);
 void _puts(char *str);
 int _strcmp(char *one, char *two);
 int _strncmp(char *one, char *two, int n);
+int _putchar(char c);
+int print_str(va_list *args);
+int print_digit(va_list *args);
+int check_format(va_list *args, const char *format, int i);
+int print(char *format, ...);
 
 void free_parser(char *line, char *newline, char **ar, char **array);
 
@@ -55,10 +60,9 @@ int execute_one(
 	char *line, char **ar, char *newline, char **array,
 	char **argv, int command_num);
 void execute_path(char *p, char **ar);
-void line_parser(char *line, int token_num, char *argv[], int command_num);
+int line_parser(char *line, int token_num, char **argv, int command_num);
 int find_path(char *p, char **ar);
 int find_file(char **ar);
-
 
 
 #endif /* _HEADER_FILE_H_ */

@@ -40,3 +40,13 @@ void _strcat(char *dest, char *ad)
 		dest[j] = ad[i];
 	dest[j] = '\0';
 }
+
+/**
+ * _putchar - function that prints a single character.
+ * @c: the character.
+ * Return: number of bytes that is printed out.
+ */
+int _putchar(char c)
+{
+	return (write(STDOUT_FILENO, &c, 1));
+}
