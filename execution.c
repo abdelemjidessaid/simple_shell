@@ -66,14 +66,14 @@ int check_prog(char *line, char **ar, char **array, char *newline)
 }
 
 /**
- * execute_one - function that excute programs and handles the errors.
+ * execute_one - Function that excute programs and handles the errors.
  * @line: Included by user.
  * @ar: Array of commands.
  * @newline: Pointer to a string contains the copy of @line.
  * @array: Array of commands.
  * @argv: Array of arguments that passed to the shell program.
  * @command_num: Number of commands contained in @line.
- * Return: 0 always success.
+ * Return: 0 Always success.
  */
 int execute_one(
 	char *line, char **ar, char *newline,

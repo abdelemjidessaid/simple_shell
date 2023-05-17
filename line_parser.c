@@ -7,7 +7,7 @@
  * @token_num: Number of segments in command line included.
  * @argv: Array of arguments given to program.
  * @command_num: Number of commands that is included.
- * Return: 0 always success.
+ * Return: 0 Always success.
  */
 int line_parser(char *line, int token_num, char **argv, int command_num)
 {
