@@ -42,9 +42,9 @@ void _strcat(char *dest, char *ad)
 }
 
 /**
- * _putchar - function that prints a single character.
- * @c: the character.
- * Return: number of bytes that is printed out.
+ * _putchar - Function that prints a single character.
+ * @c: The character specifier.
+ * Return: Number of bytes that is printed out.
  */
 int _putchar(char c)
 {
