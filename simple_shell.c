@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
 	signal(SIGINT, SIG_IGN);
 	interactive = isatty(STDIN_FILENO);
 
+	_puts("main");
 	if (!interactive && argc == 1)
 	{
 		while (getline(&line, &buf_size, stdin) > 0)
@@ -31,6 +32,7 @@ int main(int argc, char *argv[])
 		write(STDOUT_FILENO, "($) ", 4);
 		token_num = 0;
 		ret_v = getline(&line, &buf_size, stdin);
+
 		if (ret_v < 0)
 		{
 			free(line);

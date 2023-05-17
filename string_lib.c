@@ -9,6 +9,8 @@ unsigned int str_len(char *str)
 {
 	unsigned int len = 0;
 
+	if (!str)
+		return (0);
 	while (str[len] != '\0')
 		len++;
 	return (len);
@@ -49,11 +51,19 @@ char *_strdup(char *str)
  */
 int _strcmp(char *one, char *two)
 {
-	int i = 0;
+	int i = 0, len1, len2;
 
-	while (one[i] && two[i])
+	len1 = str_len(one);
+	len2 = str_len(two);
+	if (len1 != len2)
+		return (0);
+	while (one[i] != '\0' && two[i] != '\0')
+	{
 		if (one[i] != two[i])
 			return (0);
+		i++;
+	}
+
 	return (1);
 }
 
@@ -68,9 +78,15 @@ int _strncmp(char *one, char *two, int n)
 {
 	int i = 0;
 
-	while (one[i] && two[i] && i < n)
+	if (!one || !two)
+		return (0);
+	while (one[i] != '\0' && two[i] != '\0' && i < n)
+	{
 		if (one[i] != two[i])
 			return (0);
+		i++;
+	}
+
 	return (1);
 }
 
@@ -82,11 +98,10 @@ int _strncmp(char *one, char *two, int n)
 void _puts(char *str)
 {
 	int i = 0;
-	char newline = '\n';
 
 	if (!str)
 		return;
-	while (str[i])
+	while (str[i] != '\0')
 		write(STDOUT_FILENO, &str[i++], 1);
-	write(STDOUT_FILENO, &newline, 1);
+	write(STDOUT_FILENO, "\n", 1);
 }

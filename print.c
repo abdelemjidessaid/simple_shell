@@ -127,10 +127,7 @@ int print(char *format, ...)
 	};
 
 	va_start(args, format);
-	if (!format)
-		return (0);
-
-	while (format[i] != '\0')
+	while (format && format[i] != '\0')
 	{
 		if (format[i] == *(special[0].data_type))
 		{
@@ -151,4 +148,7 @@ int print(char *format, ...)
 		check = 0;
 		i++;
 	}
+
+	va_end(args);
+	return (count);
 }

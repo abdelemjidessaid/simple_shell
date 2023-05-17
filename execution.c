@@ -87,7 +87,7 @@ int execute_one(
 	if (stat(ar[0], stat_buf) == -1)
 	{
 		exists = find_file(ar);
-		if (!exists)
+		if (exists)
 		{
 			free(stat_buf);
 			return (0);
@@ -95,7 +95,7 @@ int execute_one(
 	}
 
 	child_id = fork();
-	if (!child_id)
+	if (child_id == 0)
 	{
 		if (execve(ar[0], ar, environ) == -1)
 		{
@@ -141,7 +141,6 @@ void execute_path(char *p, char **ar)
 	_strcpy(copy, p);
 	_strcat(copy, "/");
 	_strcat(copy, ar[0]);
-	copy[p_len + ar_len + 1] = '\0';
 
 	child = fork();
 	if (child == 0)
@@ -150,7 +149,7 @@ void execute_path(char *p, char **ar)
 			execve(copy, ar, environ);
 	}
 	else
-		while (waitpid(1, &status, 0) != child)
+		while (waitpid(-1, &status, 0) != child)
 			;
 	if (status == 0)
 		errno = 0;

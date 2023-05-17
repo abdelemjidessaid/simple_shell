@@ -7,19 +7,17 @@
  */
 int count_tokens(char *line)
 {
-	int i, found = 1, count = 0;
+	int count = 0, i, flag = 1;
 
-	while (line[i])
+	for (i = 0; line[i]; i++)
 	{
 		if (line[i] == ' ' || line[i] == 10 || line[i] == '\t')
-			found = 1;
-		else if (found)
+			flag = 1;
+		else if (flag == 1)
 		{
-			found = 0;
+			flag = 0;
 			++count;
 		}
-		i++;
 	}
-
 	return (count);
 }

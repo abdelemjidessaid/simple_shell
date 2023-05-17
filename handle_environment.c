@@ -11,15 +11,15 @@ int find_path(char *p, char **ar)
 {
 	struct dirent *dir;
 	int reached = 0, found = 0;
-	DIR *dr;
 
 	p = strtok(p, ":");
 	while (p && !reached)
 	{
-		dr = opendir(p);
-		if (dr)
+		DIR *dr = opendir(p);
+
+		if (dr == NULL)
 			return (0);
-		while ((dir = readdir(dr)))
+		while ((dir = readdir(dr)) != NULL)
 		{
 			if (_strcmp(dir->d_name, ar[0]))
 			{
@@ -56,6 +56,7 @@ int find_file(char **ar)
 			found = find_path(p, ar);
 			break;
 		}
+		i++;
 	}
 	free(path);
 	return (found);

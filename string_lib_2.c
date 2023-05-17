@@ -36,7 +36,7 @@ void _strcat(char *dest, char *ad)
 	d_len = str_len(dest);
 	a_len = str_len(ad);
 
-	for (j = d_len - 1, i = 0; i < a_len; i++, j++)
+	for (j = d_len, i = 0; i < a_len; i++, j++)
 		dest[j] = ad[i];
 	dest[j] = '\0';
 }
