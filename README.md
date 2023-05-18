@@ -90,13 +90,13 @@ cd simple_shell
 3. Compile the project files:
 
 ```
-gcc *.c -o run
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ```
 
 4. Run the program:
 
 ```
-./run
+./hsh
 ```
 
 5. Enjoy.
