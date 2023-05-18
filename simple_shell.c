@@ -15,7 +15,6 @@ int main(int argc, char *argv[])
 	signal(SIGINT, SIG_IGN);
 	interactive = isatty(STDIN_FILENO);
 
-	_puts("main");
 	if (!interactive && argc == 1)
 	{
 		while (getline(&line, &buf_size, stdin) > 0)
