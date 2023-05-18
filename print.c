@@ -1,9 +1,8 @@
 #include "header_file.h"
-
 /**
- * handle_number - function that prints a number recursively.
- * @num: the number.
- * Return: void.
+ * handle_number - Function that prints a number recursively.
+ * @num: The number specifier.
+ * Return: Void.
  */
 void handle_number(int num)
 {
@@ -12,12 +11,10 @@ void handle_number(int num)
 	if (num != 0)
 		_putchar('0' + (num % 10));
 }
-
-
 /**
- * print_str - function that prints a string from an array of arguments.
- * @args: array of arguments.
- * Return: number of bytes that is printed out.
+ * print_str - Function that prints a string from an array of arguments.
+ * @args: Array of arguments.
+ * Return: Number of bytes that is printed out.
  */
 int print_str(va_list *args)
 {
@@ -30,12 +27,10 @@ int print_str(va_list *args)
 
 	return (i);
 }
-
-
 /**
- * print_digit - function that prints digits.
- * @args: array of arguments.
- * Return: number of bytes that is printed out.
+ * print_digit - Function that prints digits.
+ * @args: Array of arguments.
+ * Return: Number of bytes that is printed out.
  */
 int print_digit(va_list *args)
 {
@@ -66,14 +61,12 @@ int print_digit(va_list *args)
 
 	return (bytes);
 }
-
-
 /**
- * check_format - function that checks formated string for the print function.
- * @args: pointer to an array of arguments.
- * @format: pointer to a formated string.
- * @i: the index of character to check.
- * Return: the number of bytes that is printed.
+ * check_format - Function that checks formated string for the print function.
+ * @args: Pointer to an array of arguments.
+ * @format: Pointer to a formated string.
+ * @i: The index of character to check.
+ * Return: The number of bytes that is printed.
  */
 int check_format(va_list *args, const char *format, int i)
 {
@@ -112,9 +105,9 @@ int check_format(va_list *args, const char *format, int i)
 
 
 /**
- * print - function that prints the formated strings.
- * @format: pointer to a special string.
- * Return: number of bytes that is printed out.
+ * print - Function that prints the formated strings.
+ * @format: Pointer to a special string.
+ * Return: Number of bytes that is printed out.
  */
 int print(char *format, ...)
 {
