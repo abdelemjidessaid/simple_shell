@@ -36,9 +36,11 @@ void change_dir(char **ar)
  * @ar: Pointer of pointer to string that contains the commands.
  * @array: Pointer of pointer to string that contains the commands.
  * @newline: The copy of @line.
+ * @token_num: The copy of @token_num
  * Return: 1 If a program found, 0 otherwise.
  */
-int check_prog(char *line, char **ar, char **array, char *newline, int token_num)
+int check_prog(char *line, char **ar, char **array,
+		char *newline, int token_num)
 {
 	int i = 0, exit_num = 0;
 
