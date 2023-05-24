@@ -1,5 +1,4 @@
 #include "header_file.h"
-
 /**
  * change_dir - Function that change the working directory.
  * @ar: Pointer of pointer to string that contains the environment varialbes.
@@ -37,7 +36,7 @@ void change_dir(char **ar)
  * @ar: Pointer of pointer to string that contains the commands.
  * @array: Pointer of pointer to string that contains the commands.
  * @newline: The copy of @line.
- * Return: 1 if a program found, 0 otherwise.
+ * Return: 1 If a program found, 0 otherwise.
  */
 int check_prog(char *line, char **ar, char **array, char *newline, int token_num)
 {
