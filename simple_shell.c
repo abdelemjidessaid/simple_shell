@@ -2,9 +2,9 @@
 
 /**
  * main - Entry point of the simple shell program.
- * @argc: argument count.
- * @argv: argument array.
- * Return: 0 always success.
+ * @argc: Argument count.
+ * @argv: Argument array.
+ * Return: 0 Always success.
  */
 int main(int argc, char *argv[])
 {
