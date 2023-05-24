@@ -8,6 +8,7 @@
 extern char **environ;
 
 /**** HEADER FILES ****/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -23,12 +24,12 @@ extern char **environ;
 
 
 /**** STRUCTS ****/
+
 /**
  * struct format - struct of format that holds the type of data and their
  * functions.
  * @data_type: the type of data.
  * @type: the specific function for the current data.
- *
  * Description: struct format used in print function.
  */
 typedef struct format
@@ -38,6 +39,7 @@ typedef struct format
 } frmt;
 
 /**** PROTOTYPES ****/
+
 unsigned int str_len(char *str);
 int _strcpy(char *dest, char *src);
 void _strcat(char *dest, char *ad);
@@ -65,6 +67,5 @@ int find_path(char *p, char **ar);
 int find_file(char **ar);
 void signal_stop(int signal);
 int _atoi(char *str);
-
 
 #endif /* _HEADER_FILE_H_ */

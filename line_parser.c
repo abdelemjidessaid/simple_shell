@@ -1,5 +1,4 @@
 #include "header_file.h"
-
 /**
  * line_parser - Function that parse line and execute the file if it is
  * a program.

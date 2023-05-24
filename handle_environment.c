@@ -1,11 +1,9 @@
 #include "header_file.h"
-
-
 /**
  * find_path - Function that searches for a path in array of paths.
  * @p: Pointer to string contains path.
  * @ar: Array of paths.
- * Return: 1 if found, 0 otherwise.
+ * Return: 1 If found, 0 otherwise.
  */
 int find_path(char *p, char **ar)
 {
@@ -35,7 +33,6 @@ int find_path(char *p, char **ar)
 	}
 	return (found);
 }
-
 /**
  * find_file - Function that looking for a file in PATH.
  * @ar: Pointer of pointers to string contains file paths.
