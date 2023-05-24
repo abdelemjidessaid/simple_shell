@@ -57,7 +57,7 @@ int _putchar(char c)
 /**
  * _atoi - function that converts a string number to integer.
  * @str: pointer to the string number.
- * Return: number if success, -1 otherwise. 
+ * Return: number if success, -1 otherwise.
  */
 int _atoi(char *str)
 {
@@ -79,8 +79,8 @@ int _atoi(char *str)
 			i++;
 		}
 		else
-			return 0;
+			return (0);
 	}
 
-	return num * sign;
+	return (num * sign);
 }
