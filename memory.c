@@ -1,5 +1,4 @@
 #include "header_file.h"
-
 /**
  * free_parser - Function that frees the pointers that is used in line_parser.
  * @line: Pointer to string that contains commands.
