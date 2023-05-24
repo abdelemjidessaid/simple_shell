@@ -9,5 +9,8 @@
 void signal_stop(int signal)
 {
 	if (signal == 2)
+	{
+		_puts("");
 		exit(0);
+	}
 }
