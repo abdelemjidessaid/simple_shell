@@ -39,14 +39,23 @@ void change_dir(char **ar)
  * @newline: The copy of @line.
  * Return: 1 if a program found, 0 otherwise.
  */
-int check_prog(char *line, char **ar, char **array, char *newline)
+int check_prog(char *line, char **ar, char **array, char *newline, int token_num)
 {
-	int i = 0;
+	int i = 0, exit_num = 0;
 
 	if (_strcmp(ar[0], "exit"))
 	{
-		free_parser(line, newline, ar, array);
-		_exit(errno);
+		if (token_num == 2)
+		{
+			exit_num = _atoi(ar[1]);
+			free_parser(line, newline, ar, array);
+			_exit(exit_num);
+		}
+		else
+		{
+			free_parser(line, newline, ar, array);
+			_exit(errno);
+		}
 	}
 	else if (_strcmp(ar[0], "env"))
 	{

@@ -54,7 +54,7 @@ int print(char *format, ...);
 void free_parser(char *line, char *newline, char **ar, char **array);
 
 void change_dir(char **ar);
-int check_prog(char *line, char **ar, char **array, char *newline);
+int check_prog(char *line, char **ar, char **array, char *newline, int token_num);
 int count_tokens(char *line);
 int execute_one(
 	char *line, char **ar, char *newline, char **array,
@@ -64,6 +64,7 @@ int line_parser(char *line, int token_num, char **argv, int command_num);
 int find_path(char *p, char **ar);
 int find_file(char **ar);
 void signal_stop(int signal);
+int _atoi(char *str);
 
 
 #endif /* _HEADER_FILE_H_ */

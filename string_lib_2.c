@@ -53,3 +53,34 @@ int _putchar(char c)
 {
 	return (write(STDOUT_FILENO, &c, 1));
 }
+
+/**
+ * _atoi - function that converts a string number to integer.
+ * @str: pointer to the string number.
+ * Return: number if success, -1 otherwise. 
+ */
+int _atoi(char *str)
+{
+	int i = 0, sign = 1, num = 0;
+
+	if (str[i] == '-')
+	{
+		sign *= -1;
+		i++;
+	}
+	else if (str[i] == '+')
+		i++;
+
+	while (str[i] != '\0')
+	{
+		if (str[i] >= '0' && str[i] <= '9')
+		{
+			num = num * 10 + (str[i] - '0');
+			i++;
+		}
+		else
+			return 0;
+	}
+
+	return num * sign;
+}

@@ -35,7 +35,7 @@ int line_parser(char *line, int token_num, char **argv, int command_num)
 		ar[i] = _strdup(array[i]);
 	ar[i] = NULL;
 
-	is_prog = check_prog(line, ar, array, newline);
+	is_prog = check_prog(line, ar, array, newline, token_num);
 	if (is_prog == 0)
 		x = execute_one(line, ar, newline, array, argv, command_num);
 
