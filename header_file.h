@@ -63,6 +63,7 @@ void execute_path(char *p, char **ar);
 int line_parser(char *line, int token_num, char **argv, int command_num);
 int find_path(char *p, char **ar);
 int find_file(char **ar);
+void signal_stop(int signal);
 
 
 #endif /* _HEADER_FILE_H_ */
