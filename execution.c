@@ -49,8 +49,6 @@ int check_prog(char *line, char **ar, char **array, char *newline, int token_num
 		{
 			exit_num = _atoi(ar[1]);
 			free_parser(line, newline, ar, array);
-			if (exit_num > 176)
-				_exit(0);
 			_exit(exit_num);
 		}
 		else
