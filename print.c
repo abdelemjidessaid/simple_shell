@@ -18,7 +18,7 @@ void handle_number(int num)
  */
 int print_str(va_list *args)
 {
-	int i;
+	int i = 0;
 	char *line;
 
 	line = va_arg(*args, char *);
@@ -133,7 +133,7 @@ int print(char *format, ...)
 				i++;
 			check = 1;
 		}
-		if (!check)
+		if (check == 0)
 		{
 			_putchar(format[i]);
 			count++;
