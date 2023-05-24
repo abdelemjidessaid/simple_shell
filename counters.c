@@ -1,5 +1,4 @@
 #include "header_file.h"
-
 /**
  * count_tokens - Function that count the commands in a line.
  * @line: Pointer to string that contains the commands.
